@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tabbar": "../../components/vant-weapp/tabbar/index",
+    "van-tabbar-item": "../../components/vant-weapp/tabbar-item/index",
+    "page1":"../subPages/page1/index",
+    "page2": "../subPages/page2/index",
+    "page3": "../subPages/page3/index",
+    "page4": "../subPages/page4/index"
+  }
+}

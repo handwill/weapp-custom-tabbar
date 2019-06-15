@@ -1,0 +1,5 @@
+<view class='c-page-wrapper'> 
+  <block wx:for='123456789' wx:key='{{index}}'>
+    <view class='item'>{{item}}</view>
+  </block>
+</view>

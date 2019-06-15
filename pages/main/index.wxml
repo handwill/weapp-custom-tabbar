@@ -1,0 +1,17 @@
+<!--pages/main/index.wxml-->
+<view class='main-wrapper' style='margin-bottom:{{tabbarHeight}}px;'>
+   <page1 wx:if='{{activeIndex == 0}}'></page1>
+   <page2 wx:if='{{activeIndex == 1}}'></page2>
+   <page3 wx:if='{{activeIndex == 2}}'></page3>
+   <page4 wx:if='{{activeIndex == 3}}'></page4>
+</view>
+<van-tabbar active="{{ activeIndex }}" bind:change="onChange">
+<van-tabbar-item wx:for="{{tabbar}}" wx:key="{{index}}" icon="friends-o" info="{{item.tips}}" >{{item.name}}
+      <!-- <van-icon slot="icon-active" name="{{ item.selectedIconPath }}" />
+      <van-icon slot="icon" name="{{ item.iconPath }}" /> -->
+</van-tabbar-item>
+  <!-- <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" info="new">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" info="20">标签</van-tabbar-item> -->
+</van-tabbar>

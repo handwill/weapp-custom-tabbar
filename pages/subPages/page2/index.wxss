@@ -1,0 +1,11 @@
+
+.c-page-wrapper {
+  background: palegoldenrod;
+}
+
+.item {
+  height: 200rpx;
+  text-align: center;
+  padding: 20px;
+  line-height: 200rpx;
+}
