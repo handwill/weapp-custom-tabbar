@@ -8,34 +8,26 @@ Page({
   data: {
     tabbar: [
       {
-        pagePath: "/pages/index/index",
         name: "页面1",
-        iconPath: "../../assets/images/tab1.png",
-        selectedIconPath: "../../assets/images/tab1_cur.png",
+        iconPath: "home-o",
         tips:'',
         selected: true
       },
       {
-        pagePath: "/pages/fabu/fabu",
         name: "页面2",
-        iconPath: "../../assets/images/tab_new.png",
-        selectedIconPath: "../../assets/images/tab_new.png",
-        tips:'new',
+        iconPath: "search",
+        tips:'1',
         selected: false
       },
       {
-        pagePath: "/pages/fabu/fabu",
         name: "页面3",
-        iconPath: "../../assets/images/tab_new.png",
-        selectedIconPath: "../../assets/images/tab_new.png",
-        tips: 'new',
+        iconPath: "friends-o",
+        tips: '',
         selected: false
       },
       {
-        pagePath: "/pages/user/user",
         name: "页面4",
-        iconPath: "../../assets/images/tab4.png",
-        selectedIconPath: "../../assets/images/tab4_cur.png",
+        iconPath: "setting-o",
         tips:'4',
         selected: false
       }
@@ -53,11 +45,16 @@ Page({
       this.data.scrollTopArray[index] = 0;
       // item.isFirstLoad = true
     });
+    wx.setNavigationBarTitle({
+      title: this.data.tabbar[0].name,
+    })
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function () {
+    this.updateSubPageShowHide(this.data.activeIndex);
+  },
   /**
  * 生命周期函数--监听页面隐藏
  */
@@ -84,10 +81,12 @@ Page({
   updateSubPageShowHide(currentIndex) {
     this.data.tabbar.forEach(function (value, i) {
       if (i == currentIndex) {
-        value.onShow = true;
-        value.hasLoad = true;
+        value.selected = true;
+        wx.setNavigationBarTitle({
+          title: value.name,
+        })
       } else {
-        value.onShow = false;
+        value.selected = false;
       }
     })
     this.setData({

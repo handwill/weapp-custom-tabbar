@@ -8,6 +8,11 @@ Component({
       type: Number,
       value: app.homePageHeight
     },
+    onShow: {
+      type: Boolean,
+      value: false,
+      observer: 'onShowHideChange'
+    },
   },
 
   /**
@@ -21,6 +26,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onShowHideChange(show) {
+      if (show) {
+        console.log('page2 show')
+      } else {
+        console.log('page2 hide')
+      }
+    },
   }
 })

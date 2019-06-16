@@ -8,13 +8,24 @@ Component({
       type: Number,
       value: app.homePageHeight
     },
+    onShow: {
+      type: Boolean,
+      value: false,
+      observer: 'onShowHideChange'
+    },
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    onShowHideChange(show) {
+      if (show) {
+        console.log('page4 show')
+      } else {
+        console.log('page4 hide')
+      }
+    },
   },
 
   /**
